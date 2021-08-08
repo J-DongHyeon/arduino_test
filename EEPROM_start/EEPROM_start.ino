@@ -1,9 +1,21 @@
+#include <EEPROM.h>
+
 void setup() {
-  // put your setup code here, to run once:
+  for(int i = 0; i<30; i++) {
+    EEPROM.write(i, i);
+  }
+
+  Serial.begin(9600);
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  for (int i=0; i<30; i++) {
+    int data = EEPROM.read(i);
+
+    Serial.println(data);
+  }
+
+  while(true);
 
 }
