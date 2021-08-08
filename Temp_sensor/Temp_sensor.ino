@@ -1,9 +1,16 @@
 void setup() {
-  // put your setup code here, to run once:
+  analogReference(INTERNAL);
+  Serial.begin(9600);
+  
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  int data = analogRead(A0);
 
+  float analog_volt = data * (1.1 / 1023);
+
+  float analog_temp = analog_volt * (110 / 1.1);
+
+  Serial.println(String(analog_temp) + " C");
 }
