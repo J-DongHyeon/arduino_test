@@ -119,7 +119,7 @@ def data_cal() :
         
     else :  
 
-        phi += All_Gdata[count][0] * 36/1000
+        phi += All_Gdata[count][0] * 36/1000 #대략적인 dt가 36/1000 s 정도가 된다.
         theta += All_Gdata[count][1] * 36/1000
         psi += All_Gdata[count][2] * 36/1000
     
